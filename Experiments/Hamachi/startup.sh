@@ -11,7 +11,7 @@ sudo hamachi attach wong.jeremias@gmail.com
 
 echo "Setting Nickname - jellypi1"
 
-sudo hamachi set-nick "Jellypi1"
+##sudo hamachi set-nick "Jellypi1"
 
 sudo hamachi do-join Jelly-pi
 
