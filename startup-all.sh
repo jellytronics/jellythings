@@ -1,15 +1,21 @@
 #!/bin/bash
 
-echo "Startup Scripts Running YOZ!"
+echo "Initialization Scripts Running YOZ!"
 
-echo "Starting Hamachi Script"
+echo "Initializing Hamachi"
 
 chmod 777 ~/jellythings/Experiments/Hamachi/startup.sh
 
 ~/jellythings/Experiments/Hamachi/startup.sh
 
-echo "Starting LCD Controller"
+echo "Initializing LCD Controller"
 
 chmod 777 ~/jellythings/Experiments/LCD\ Controller/startup.sh
 
 ~/jellythings/Experiments/LCD\ Controller/startup.sh
+
+echo "Initializating Ttytter"
+
+chmod 777 ~/jellythings/Experiments/LCD\ Controller/startup.sh
+
+echo "Initialization complete"

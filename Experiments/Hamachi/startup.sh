@@ -13,11 +13,8 @@ echo "Setting Nickname - jellypi1"
 
 sudo hamachi set-nick "Jellypi1"
 
-echo "enter password"
-
-read password
-
-$password | sudo hamachi do-join Jelly-pi
+# solve password problem here
+#sudo hamachi do-join Jelly-pi
 
 echo "Starting SSH Client"
 
