@@ -1,3 +1,12 @@
 [submodule "pip"]
 	path = pip
 	url = git@github.com:pypa/pip.git
+[submodule "Experiments/LCD Controller/quick2wire-gpio-admin"]
+	path = Experiments/LCD Controller/quick2wire-gpio-admin
+	url = git@github.com:quick2wire/quick2wire-gpio-admin.git
+[submodule "Experiments/LCD Controller/quick2wire-python-api"]
+	path = Experiments/LCD Controller/quick2wire-python-api
+	url = git@github.com:quick2wire/quick2wire-python-api.git
+[submodule "Experiments/Python/pip"]
+	path = Experiments/Python/pip
+	url = git@github.com:pypa/pip.git
