@@ -1,7 +1,4 @@
 #!/bin/bash
 
-a='hello'
-b='world'
-c=$a$b
-echo $c
-> helloworld
+NOW=$(date +"%m-%d-%Y %T")
+ttytter -status="Jellypi1 is alive! - $NOW"
