@@ -28,8 +28,9 @@ echo "Gitting Now"
 
 NOW=$(date +"%m-%d-%Y %T")
 
+git pull
 git add -A
 git commit -m "Auto Backup and Sync - $NOW"
-git push
+git push origin master
 git pull
 git submodule foreach git pull origin master
