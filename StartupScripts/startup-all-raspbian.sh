@@ -2,6 +2,10 @@
 
 echo "Initialization Scripts Running YOZ!"
 
+echo "Initializing XRDP"
+
+sudo service xrdp start
+
 echo "Initializing Hamachi"
 
 chmod 777 ~/jellythings/Experiments/Hamachi/startup.sh
@@ -14,7 +18,7 @@ chmod 777 ~/jellythings/Experiments/LCD\ Controller/startup.sh
 
 ~/jellythings/Experiments/LCD\ Controller/startup.sh
 
-echo "Initializating Ttytter"
+echo "Initializing Ttytter"
 
 chmod 777 ~/jellythings/Experiments/LCD\ Controller/startup.sh
 
