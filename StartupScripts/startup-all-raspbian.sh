@@ -28,6 +28,8 @@ echo "Gitting Now"
 
 NOW=$(date +"%m-%d-%Y %T")
 
+cd ~/jellythings
+
 git pull
 git add -A
 git commit -m "Auto Backup and Sync - $NOW"
