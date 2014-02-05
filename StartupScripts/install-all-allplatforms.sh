@@ -2,7 +2,8 @@
 
 echo "Installing all softwares"
 
-<<COMMENT1
+<<CHANGING_REPOS
+
 	echo "Setting Software Repositories"
 	
 	NOW=$(date +"%m-%d-%Y %T")
@@ -20,12 +21,21 @@ echo "Installing all softwares"
 	deb mirror://mirrors.ubuntu.com/mirrors.txt precise-updates main restricted universe multiverse
 	deb mirror://mirrors.ubuntu.com/mirrors.txt precise-backports main restricted universe multiverse
 	deb mirror://mirrors.ubuntu.com/mirrors.txt precise-security main restricted universe multiverse
-COMMENT1
+
+CHANGING_REPOS
 
 echo "Installing utilities"
 
 sudo apt-get update
-sudo apt-get install python3 ssh sshfs arduino lm-sensors ttytter python3-setuptools python3-pip network-manager wpasupplicant wireless-tools wireshark nmap xrdp vino
+sudo apt-get install subversion python3 ssh sshfs arduino lm-sensors ttytter python3-setuptools python3-pip network-manager wpasupplicant wireless-tools wireshark nmap xrdp vino autoconf libtool libpam0g-dev libx11-dev libxfixes-dev libssl-dev
+
+<<VNC_COMMENT
+
+	sudo apt-get install gnome-session-fallback 
+	echo  ”gnome-session --session=gnome-fallback” > ~/.xsession
+	sudo apt-get install x11vnc
+	
+VNC_COMMENT
 
 echo "Installing LCD Controller"
 
