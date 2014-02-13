@@ -19,7 +19,7 @@ public class GoldHunter {
 
 		// To check before anything is done.
 		// Remove the statement below after you have tested your program.
-		map.display();
+		//map.display();
 
 		// Fill in the code below
 		getGold(map);
@@ -29,36 +29,34 @@ public class GoldHunter {
 
 	}
 
-	public static void getGold(Mymap map){
-		nRow = map.getNumRow();
-		nCol = map.getNumCol();
-
-		for (int i = 0; i < nRow; i++){
-			for (int j = 0; j < nCol; j++){
+	public static void getGold(MyMap map){
+		for (int i = 0; i < map.getNumRow(); i++){
+			for (int j = 0; j < map.getNumCol(); j++){
 				countMines(map, i, j);
 			}
 		}
 	}
 
-	public static void countMines(Mymap map, int row, int col){
+	public static void countMines(MyMap map, int row, int col){
 
 		int gold = 0;
 
 		for (int i = row - 1; i < row + 2; i++){
 			for (int j = col - 1; j < col + 2; j++){
-				if (i == row && j == col){
-					if (map.getLabel == '*'){
-						map.setGoldVal(-1, row, col);
-					}
-				}if (map.indexWithinRange(i,j)){
-					if (map.getLabel == '*'){
-						gold++;
+				if (map.indexWithinRange(i,j)){
+					if (map.getLabel(i, j) == '*'){
+						if (i == row && j == col){
+							map.setGoldVal(row, col, -1);
+							return;
+						}else{
+							gold++;
+						}
 					}
 				}
 			}
 		}
 
-		map.setGoldVal(gold, row, col);
+		map.setGoldVal(row, col, gold);
 	}
 
 	// Note: You should add some methods in this program.

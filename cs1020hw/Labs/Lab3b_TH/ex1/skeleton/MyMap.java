@@ -1,8 +1,8 @@
 // CS1020 (AY2013/4 Semester 2)
 // Take-home lab #2
-// Name: 
-// Matric. No.: 
-// Lab group: 
+// Name: Wong Say Juan, Jeremias
+// Matric. No.: A0066754W
+// Lab group: 2
 // The MyMap class consists of 2 two-dimensional arrays,
 // the character grid representing the map, and an integer array
 // that stores the number of neighbouring mines in each mine-free location.
@@ -75,7 +75,7 @@ class MyMap {
 	// Return true if row, col are within valid range,
 	// otherwise return false.
 	public boolean indexWithinRange(int row, int col) {
-		return row >= 0 && col >= 0 && row < nRow && col < nCol;
+		return row >= 0 && col >= 0 && row <= nRow - 1 && col <= nCol - 1;
 	}
 }
 
