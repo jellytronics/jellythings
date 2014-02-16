@@ -8,6 +8,10 @@ fi
 
 echo "Initialization Scripts Running YOZ!"
 
+echo "Improving Wifi"
+
+chmod 777 ~/jellythings/StartupScripts/improve_wifi.sh
+
 echo "Initializing XRDP"
 
 sudo service xrdp start
@@ -21,9 +25,9 @@ chmod 777 ~/jellythings/Experiments/Hamachi/startup.sh
 
 if [[ "$(lsb_release -si)" == *Debian* ]] || [[ "$(lsb_release -si)" == *Ubuntu* ]]
 then 
-	echo "Greetings $(lsb_release) Distribution!"
+	echo "Greetings $(lsb_release) Distribution"'!'
 else
-	echo "Greetings $(lsb_release) Distribution!"
+	echo "Greetings $(lsb_release) Distribution"'!'
 	echo "Initializing LCD Controller"
 	chmod 777 ~/jellythings/Experiments/LCD\ Controller/startup.sh
 	~/jellythings/Experiments/LCD\ Controller/startup.sh
@@ -33,6 +37,10 @@ fi
 echo "Initializing Ttytter"
 
 chmod 777 ~/jellythings/Experiments/LCD\ Controller/startup.sh
+
+echo "Initializing SDR"
+
+chmod 777 ~/jellythings/Experiments/Sdr/startup_sdr.sh
 
 echo "Initialization complete"
 

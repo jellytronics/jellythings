@@ -4,6 +4,6 @@ echo "Initializing Ttytter"
 
 ttytter
 
-ttytter -status="I am alive - Jellypi1"
+ttytter -status="$(id -un) @ $(hostname) says: Hi"'!'" @ $(date +"%m-%d-%Y %T %Z")"
 
 

@@ -21,3 +21,5 @@ echo "Taking interfaces up"
 ifconfig wlan0 up
 ifconfig wlan1 up
 ifconfig wlan2 up
+
+echo "Wifi up"

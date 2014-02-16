@@ -27,7 +27,7 @@ CHANGING_REPOS
 echo "Installing utilities"
 
 sudo apt-get update
-sudo apt-get install subversion python3 ssh sshfs arduino lm-sensors ttytter python3-setuptools python3-pip network-manager wpasupplicant wireless-tools wireshark nmap xrdp vino autoconf libtool libpam0g-dev libx11-dev libxfixes-dev libssl-dev
+sudo apt-get install subversion python3 ssh sshfs arduino lm-sensors ttytter python3-setuptools python3-pip network-manager wpasupplicant wireless-tools wireshark nmap xrdp vino autoconf libtool libpam0g-dev libx11-dev libxfixes-dev libssl-dev -y
 
 <<VNC_COMMENT
 
@@ -45,11 +45,19 @@ VNC_COMMENT
 HOW_TO_ADD_SUBDIRECTORY
 
 
+
+
 echo "Installing LCD Controller"
 
-chmod 777 ~/jellythings/Experiments/LCD\ Controller/
+chmod 777 ~/jellythings/Experiments/LCD\ Controller/install.sh
 
-~/jellythings/Experiments/LCD\ Controller/
+~/jellythings/Experiments/LCD\ Controller/install.sh
+
+echo "Installing SDR packages"
+
+chmod 777 ~/jellythings/Experiments/Sdr/install_sdr.sh
+
+~/jellythings/Experiments/Sdr/install_sdr.sh
 
 echo "Installation complete"
 
