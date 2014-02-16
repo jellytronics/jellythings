@@ -2,7 +2,7 @@
 
 echo "Installing GNURADIO and SDR Tools"
 
-apt-get install cmake gnuradio libusb-dev libusb-1.0-0-dev alsa alsa-utils
+apt-get install cmake gnuradio libusb-dev libusb-1.0-0-dev alsa alsa-utils -y
 
 cd ~
 

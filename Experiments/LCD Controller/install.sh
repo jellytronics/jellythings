@@ -3,7 +3,7 @@
 
 echo "Installing python3"
 
-sudo apt-get install python3 python-virtualenv python-pip python3-setuptools
+sudo apt-get install python3 python-virtualenv python-pip python3-setuptools -y
 
 #echo "Cloning quick2wire"
 
