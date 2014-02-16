@@ -13,6 +13,6 @@
 [submodule "Experiments/LCD Controller/i2clibraries"]
 	path = Experiments/LCD Controller/i2clibraries
 	url = https://bitbucket.org/thinkbowl/i2clibraries.git
-[submodule "/root/jellythings/Experiments/Sdr/rtl-sdr"]
-	path = /root/jellythings/Experiments/Sdr/rtl-sdr
+[submodule "Experiments/Sdr/rtl-sdr"]
+	path = Experiments/Sdr/rtl-sdr
 	url = git://git.osmocom.org/rtl-sdr.git
