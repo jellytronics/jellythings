@@ -37,6 +37,14 @@ sudo apt-get install subversion python3 ssh sshfs arduino lm-sensors ttytter pyt
 	
 VNC_COMMENT
 
+
+<<HOW_TO_ADD_SUBDIRECTORY
+
+	git submodule add git://git.osmocom.org/rtl-sdr.git ~/jellythings/Experiments/Sdr/rtl-sdr
+
+HOW_TO_ADD_SUBDIRECTORY
+
+
 echo "Installing LCD Controller"
 
 chmod 777 ~/jellythings/Experiments/LCD\ Controller/
