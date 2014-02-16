@@ -65,5 +65,5 @@ chmod 777 ~/jellythings -R
 
 echo "Initializing Services"
 
-~/jellythings/StartupScripts/startup-all.sh
+~/jellythings/StartupScripts/startup-all-allplatforms.sh
 
