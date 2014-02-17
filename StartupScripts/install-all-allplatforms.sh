@@ -24,10 +24,54 @@ echo "Installing all softwares"
 
 CHANGING_REPOS
 
+
+
+
 echo "Installing utilities"
 
-sudo apt-get update
-sudo apt-get install subversion python3 ssh sshfs arduino lm-sensors ttytter python3-setuptools python3-pip network-manager wpasupplicant wireless-tools wireshark nmap xrdp vino autoconf libtool libpam0g-dev libx11-dev libxfixes-dev libssl-dev -y
+if [[ $(sw_vers -productName) == *Mac* ]]
+	then
+
+	if hash brew 2>/dev/null
+		then
+		echo "Brew is installed, updating applications"
+		brew doctor
+		brew update
+	else
+		ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+		brew doctor
+		brew update
+	fi
+
+	echo "inspecting BASH_RC for homebrew github token"
+
+	if cat ~/.bashrc | grep "export HOMEBREW_GITHUB_API_TOKEN"
+		then
+		echo "Homebrew token installed"
+	else
+		echo 'export HOMEBREW_GITHUB_API_TOKEN=9eeef0eb8e3d167d168deca07d2cfd98c1048353' >> ~/.bashrc
+	fi
+
+	echo "Installing applications on brew"
+
+	brew install subversion python3 sshfs ttytter python3-setuptools python3-pip wireshark nmap autoconf libtool
+
+else
+	sudo apt-get update
+	sudo apt-get install subversion python3 ssh sshfs arduino lm-sensors ttytter python3-setuptools python3-pip network-manager wpasupplicant wireless-tools wireshark nmap xrdp vino autoconf libtool libpam0g-dev libx11-dev libxfixes-dev libssl-dev -y
+fi
+
+
+
+
+
+
+
+
+
+
+
+
 
 <<VNC_COMMENT
 

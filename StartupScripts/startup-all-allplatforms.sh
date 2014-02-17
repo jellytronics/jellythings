@@ -6,7 +6,23 @@ if [ "$(whoami)" != 'root' ]; then
         exit 1;
 fi
 
+
 echo "Initialization Scripts Running YOZ!"
+
+NOW=$(date +"%m-%d-%Y %T")
+
+echo "Updating GIT - $NOW"
+
+cd ~/jellythings
+
+git pull
+git add -A
+git commit -m "Auto Backup and Sync - $NOW"
+git push origin master
+git pull
+git submodule update --init
+git pull --recurse-submodules
+git submodule foreach git pull origin master
 
 echo "Improving Wifi"
 
@@ -24,8 +40,11 @@ chmod 777 ~/jellythings/Experiments/Hamachi/startup.sh
 
 
 if [[ "$(lsb_release -si)" == *Debian* ]] || [[ "$(lsb_release -si)" == *Ubuntu* ]]
-then 
+	then 
 	echo "Greetings $(lsb_release) Distribution"'!'
+elif [[ $(sw_vers -productName) == *Mac* ]]
+	then
+	echo "Welcome Mac!"
 else
 	echo "Greetings $(lsb_release) Distribution"'!'
 	echo "Initializing LCD Controller"
@@ -47,6 +66,8 @@ echo "Initialization complete"
 echo "Gitting Now"
 
 NOW=$(date +"%m-%d-%Y %T")
+
+echo "Updating GIT - $NOW"
 
 cd ~/jellythings
 

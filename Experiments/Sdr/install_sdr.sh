@@ -1,8 +1,23 @@
 #!/bin/bash
 
+
 echo "Installing GNURADIO and SDR Tools"
 
-apt-get install cmake gnuradio libusb-dev libusb-1.0-0-dev alsa alsa-utils -y
+if [[ $(sw_vers -productName) == *Mac* ]]
+	then
+	echo "Installing applications on brew"
+
+	#brew install subversion python3 sshfs ttytter python3-setuptools python3-pip wireshark nmap autoconf libtool
+	#https://github.com/titanous/homebrew-gnuradio
+	
+else
+	apt-get install cmake gnuradio libusb-dev libusb-1.0-0-dev alsa alsa-utils -y
+fi
+
+
+
+
+
 
 cd ~
 
