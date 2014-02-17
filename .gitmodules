@@ -16,3 +16,6 @@
 [submodule "Experiments/Sdr/rtl-sdr"]
 	path = Experiments/Sdr/rtl-sdr
 	url = git://git.osmocom.org/rtl-sdr.git
+[submodule "Experiments/Sdr/dump1090"]
+	path = Experiments/Sdr/dump1090
+	url = git@github.com:antirez/dump1090.git
