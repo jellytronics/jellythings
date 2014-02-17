@@ -26,7 +26,6 @@ if [[ $(sw_vers -productName) == *Mac* ]]
 		brew install libusb libusb-compat --universal
 		brew install cmake sox python gfortran umfpack swig
 		brew install wxmac --python
-		brew install rtlsdr gr-osmosdr gr-baz --HEAD
 		#https://github.com/titanous/homebrew-gnuradio
 
 		sudo pip install numpy Cheetah lxml
@@ -36,6 +35,8 @@ if [[ $(sw_vers -productName) == *Mac* ]]
 		
 		brew tap titanous/homebrew-gnuradio
 		brew install gnuradio --with-qt
+
+		brew install rtlsdr gr-osmosdr gr-baz --HEAD
 
 		if cat ~/.gnuradio/config.conf | grep "local_blocks_path"
 			then
