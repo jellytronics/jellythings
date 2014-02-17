@@ -26,6 +26,23 @@ echo "Installing all softwares"
 CHANGING_REPOS
 
 
+echo "Checking ssh-keys"
+
+if cat ssh-add -l | grep "The agent has no identities."
+	then
+	echo "Installing ssh-keys"
+	if cat ~/.ssh/id_rsa.pub 2>/dev/null
+		then
+		echo "SSH keys exist"
+	else
+		echo "Generating ssh-key"
+		ssh-keygen
+	fi
+	ssh-add ~/.ssh/id_rsa.pub
+fi
+
+
+
 
 
 echo "Installing utilities"
