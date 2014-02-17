@@ -32,29 +32,49 @@ echo "Installing utilities"
 if [[ $(sw_vers -productName) == *Mac* ]]
 	then
 
+	echo "Hi mac"'!'
+
 	if hash brew 2>/dev/null
 		then
-		echo "Brew is installed, updating applications"
-		brew doctor
-		brew update
 	else
-		ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-		brew doctor
-		brew update
+
+		if hash ruby -v 2>/dev/null
+			then
+			echo "Ruby is installed"
+			ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+		else
+			echo "Gotta install ruby first yoz. how come your mac doesn't come with ruby?"
+		fi
+
 	fi
+
+	echo "Brew is installed, updating applications"
+	brew doctor
+	brew update
 
 	echo "inspecting BASH_RC for homebrew github token"
 
 	if cat ~/.bashrc | grep "export HOMEBREW_GITHUB_API_TOKEN"
 		then
-		echo "Homebrew token installed"
 	else
 		echo 'export HOMEBREW_GITHUB_API_TOKEN=9eeef0eb8e3d167d168deca07d2cfd98c1048353' >> ~/.bashrc
+		source ~/.bashrc
 	fi
 
+	echo "Homebrew token installed"
 	echo "Installing applications on brew"
 
-	brew install subversion python3 sshfs ttytter python3-setuptools python3-pip wireshark nmap autoconf libtool
+	brew install coreutils subversion python3 sshfs ttytter python3-setuptools python3-pip wireshark nmap autoconf libtool
+
+	if hash gtimeout 2 watch dmesg 2>/dev/null
+		then
+	else
+		echo "Installing watch command on mac"
+		curl -O http://ktwit.net/code/watch-0.2-macosx/watch
+		chmod +x watch
+		sudo mv watch /usr/local/bin/
+	fi
+	echo "Watch command installed"
 
 else
 	sudo apt-get update
