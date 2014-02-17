@@ -1,13 +1,34 @@
-jellythings
-===========
+#jellythings
 
-Things that I play around with for leisure.
+
+## Information
+
+These are things that I've done for leisure.
 
 Well let's get started.
 
-cs1020hw contains all my entries for cs1020 (Credits to NUS)
-cs2020hw contains all my entries for cs2020 (Credits to NUS)
-Experiments contains all my digital and electronics experiments
+Experiments contains all my digital and electronics experimentations
 StartupScripts contains scripts that will help in the initialization of my Raspberry Pis and Servers
+Ding Dangs contains all the nonsense stuff such as OVPN files and stuff.
 
-I will port/fork whatever relevant codes in Experiments when the code matures and is of any use.
+
+## Installation
+
+- Git clone this
+
+- Start install script
+
+  ```sh
+  cd jellythings
+  StartupScripts/install-all-allplatforms.sh
+  ```
+
+- Brew a cuppa coffee, chillout and Enjoy!!!
+
+## Comments
+
+I will try my best to work on the codes and iron out all the kinks (I'm a student btw)
+
+All my homework and projects have been shifted into another git archive, (check those out)
+
+I will port/fork whatever sub project within Experiments when the code matures and gains suitable applications externally.

@@ -11,6 +11,7 @@ elif [[ $(sw_vers -productName) == *Mac* ]]
 else
 	if cat ~/.bashrc | grep "export QUICK2WIRE_API_HOME=~/jellythings/Experiments/LCD\ Controller/quick2wire-python-api"
 		then
+		echo "environment variables applied for lcd controller"
 	else
 		export QUICK2WIRE_API_HOME=~/jellythings/Experiments/LCD\ Controller/quick2wire-python-api
 		export PYTHONPATH=$PYTHONPATH:$QUICK2WIRE_API_HOME

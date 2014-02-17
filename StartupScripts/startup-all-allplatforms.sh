@@ -1,11 +1,11 @@
 #!/bin/bash
 
-
+<<NICE_IDEA_BUT_NOT_SUITABLE
 if [ "$(whoami)" != 'root' ]; then
         echo "You have no permission to run $0 as non-root user."
         exit 1;
 fi
-
+NICE_IDEA_BUT_NOT_SUITABLE
 
 echo "Initialization Scripts Running YOZ!"
 

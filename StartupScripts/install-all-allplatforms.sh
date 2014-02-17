@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 echo "Installing all softwares"
 
 <<CHANGING_REPOS
@@ -36,6 +37,7 @@ if [[ $(sw_vers -productName) == *Mac* ]]
 
 	if hash brew 2>/dev/null
 		then
+		echo "brew installed"
 	else
 
 		if hash ruby -v 2>/dev/null
@@ -56,6 +58,7 @@ if [[ $(sw_vers -productName) == *Mac* ]]
 
 	if cat ~/.bashrc | grep "export HOMEBREW_GITHUB_API_TOKEN"
 		then
+		echo "token installed"
 	else
 		echo 'export HOMEBREW_GITHUB_API_TOKEN=9eeef0eb8e3d167d168deca07d2cfd98c1048353' >> ~/.bashrc
 		source ~/.bashrc
@@ -68,6 +71,7 @@ if [[ $(sw_vers -productName) == *Mac* ]]
 
 	if hash gtimeout 2 watch dmesg 2>/dev/null
 		then
+		echo "watch and timeout installed"
 	else
 		echo "Installing watch command on mac"
 		curl -O http://ktwit.net/code/watch-0.2-macosx/watch
@@ -129,5 +133,5 @@ chmod 777 ~/jellythings -R
 
 echo "Initializing Services"
 
-~/jellythings/StartupScripts/startup-all-allplatforms.sh
+sudo ~/jellythings/StartupScripts/startup-all-allplatforms.sh
 

@@ -17,6 +17,7 @@ elif [[ $(sw_vers -productName) == *Mac* ]]
 else
 	if cat ~/.bashrc | grep "export QUICK2WIRE_API_HOME=~/jellythings/Experiments/LCD\ Controller/quick2wire-python-api"
 		then
+		echo "environment variables applied for lcd controller"
 	else
 		export QUICK2WIRE_API_HOME=~/jellythings/Experiments/LCD\ Controller/quick2wire-python-api
 		export PYTHONPATH=$PYTHONPATH:$QUICK2WIRE_API_HOME
@@ -40,6 +41,7 @@ else
 
 	if hash gpio-admin export 22 2>/dev/null
 		then
+		echo "gpio-admin installed"
 	else
 		#https://github.com/quick2wire/quick2wire-gpio-admin
 		cd ~/jellythings/Experiments/LCD\ Controller/quick2wire-gpio-admin

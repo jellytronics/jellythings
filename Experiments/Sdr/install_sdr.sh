@@ -5,7 +5,6 @@ echo "Installing GNURADIO and SDR Tools"
 
 if [[ $(sw_vers -productName) == *Mac* ]]
 	then
-
 	echo "checking bashrc for appropriate python path"
 
 	if cat ~/.bashrc | grep "export PATH=/usr/local/bin:/usr/local/share/python:$PATH"
@@ -30,10 +29,10 @@ if [[ $(sw_vers -productName) == *Mac* ]]
 		brew install rtlsdr gr-osmosdr gr-baz --HEAD
 		#https://github.com/titanous/homebrew-gnuradio
 
-		pip install numpy Cheetah lxml
-		pip install https://github.com/scipy/scipy/tarball/v0.11.0rc2
+		sudo pip install numpy Cheetah lxml
+		sudo pip install https://github.com/scipy/scipy/tarball/v0.11.0rc2
 		export PKG_CONFIG_PATH="/usr/x11/lib/pkgconfig" 
-		pip install http://downloads.sourceforge.net/project/matplotlib/matplotlib/matplotlib-1.1.1/matplotlib-1.1.1.tar.gz
+		sudo pip install http://downloads.sourceforge.net/project/matplotlib/matplotlib/matplotlib-1.1.1/matplotlib-1.1.1.tar.gz
 		
 		brew tap titanous/homebrew-gnuradio
 		brew install gnuradio --with-qt
@@ -51,7 +50,7 @@ if [[ $(sw_vers -productName) == *Mac* ]]
 
 else
 	echo "Installing GNURADIO with apt-get"
-	apt-get install cmake gnuradio libusb-dev libusb-1.0-0-dev alsa alsa-utils -y
+	sudo apt-get install cmake gnuradio libusb-dev libusb-1.0-0-dev alsa alsa-utils -y
 fi
 
 
