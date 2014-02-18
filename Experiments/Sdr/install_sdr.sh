@@ -27,16 +27,66 @@ if [[ $(sw_vers -productName) == *Mac* ]]
 		brew install cmake sox python gfortran umfpack swig
 		brew install wxmac --python
 		#https://github.com/titanous/homebrew-gnuradio
+		#https://github.com/xlfe/homebrew-gnuradio
 
-		sudo pip install numpy Cheetah lxml
-		sudo pip install https://github.com/scipy/scipy/tarball/v0.11.0rc2
-		export PKG_CONFIG_PATH="/usr/x11/lib/pkgconfig" 
-		sudo pip install http://downloads.sourceforge.net/project/matplotlib/matplotlib/matplotlib-1.1.1/matplotlib-1.1.1.tar.gz
+		brew tap samueljohn/homebrew-python
+		brew install numpy scipy pixman
+		brew install matplotlib --with-gtk --with-wx --with-pyqt 
+
+		function print_pip_stats {
+			pip list | grep $1
+		}
+
+		function install_pip {
+			sudo pip install $1
+		}
+
+		function pip_handler {
+			if print_pip_stats $1
+				then
+				echo $1' is installed'
+			else
+				echo $1' is not installed, installing...'
+				install_pip $1
+			fi
+		}
+
+		pip_handler numpy
+		pip_handler Cheetah
+		pip_handler lxml
+
+		###		<<REVERT_xlfe
+		###		
+		###		if print_pip_stats "scipy"
+		###			then
+		###			echo "scipy is installed"
+		###		else
+		###			sudo pip install https://github.com/scipy/scipy/tarball/v0.11.0rc2
+		###		fi
+		###		
+		###		export PKG_CONFIG_PATH="/usr/x11/lib/pkgconfig" 
+		###		
+		###		if print_pip_stats "matplotlib"
+		###			then
+		###			echo "matplotlib is installed"
+		###		else
+		###			sudo pip install http://downloads.sourceforge.net/project/matplotlib/matplotlib/matplotlib-1.1.1/matplotlib-1.1.1.tar.gz
+		###		fi
+		###		
+		###		REVERT_xlfe
+
+		##sudo pip install numpy Cheetah lxml
+		##sudo pip install https://github.com/scipy/scipy/tarball/v0.11.0rc2
+		##export PKG_CONFIG_PATH="/usr/x11/lib/pkgconfig" 
+		##sudo pip install http://downloads.sourceforge.net/project/matplotlib/matplotlib/matplotlib-1.1.1/matplotlib-1.1.1.tar.gz
 		
-		brew tap titanous/homebrew-gnuradio
-		brew install gnuradio --with-qt
-
-		brew install rtlsdr gr-osmosdr gr-baz --HEAD
+		brew untap titanous/homebrew-gnuradio
+		brew tap xlfe/homebrew-gnuradio
+		brew link --overwrite python
+		brew install --with-qt gnuradio
+		brew install sox
+		brew install --HEAD rtlsdr gr-osmosdr gr-baz 
+		brew install --HEAD op25 gqrx
 
 		if cat ~/.gnuradio/config.conf | grep "local_blocks_path"
 			then

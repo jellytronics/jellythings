@@ -86,9 +86,9 @@ if [[ $(sw_vers -productName) == *Mac* ]]
 
 	brew install coreutils subversion python3 sshfs ttytter python3-setuptools python3-pip wireshark nmap autoconf libtool
 
-	if hash gtimeout 2 watch dmesg 2>/dev/null
+	if watch --help 2>/dev/null
 		then
-		echo "watch and timeout installed"
+		echo "watch installed"
 	else
 		echo "Installing watch command on mac"
 		curl -O http://ktwit.net/code/watch-0.2-macosx/watch
