@@ -188,6 +188,7 @@ else
 	cd ~/jellythings/Experiments/Sdr/dump1090/
 	make
 	chmod +X ~/jellythings/Experiments/Sdr/dump1090/
+	echo "dump1090 installed. to run, type ~/jellythings/Experiments/Sdr/dump1090/dump1090"
 fi
 
 
