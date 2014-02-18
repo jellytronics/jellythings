@@ -92,6 +92,7 @@ if [[ $(sw_vers -productName) == *Mac* ]]
 		brew install --with-qt gnuradio
 		brew install sox
 		brew install --HEAD rtlsdr gr-osmosdr gr-baz 
+		brew install netcat
 		#brew install --HEAD op25 gqrx
 
 
@@ -178,6 +179,16 @@ else
 	sudo ldconfig
 fi
 
+
+if hash ~/jellythings/Experiments/Sdr/dump1090/dump1090 2>/dev/null
+then
+	echo "dump1090 is already installed"
+else
+	echo "Installing dump1090"
+	cd ~/jellythings/Experiments/Sdr/dump1090/
+	make
+	chmod +X ~/jellythings/Experiments/Sdr/dump1090/
+fi
 
 
 
