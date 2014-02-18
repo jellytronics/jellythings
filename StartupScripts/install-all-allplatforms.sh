@@ -84,7 +84,11 @@ if [[ $(sw_vers -productName) == *Mac* ]]
 	echo "Homebrew token installed"
 	echo "Installing applications on brew"
 
-	brew install coreutils subversion python3 sshfs ttytter python3-setuptools python3-pip wireshark nmap autoconf libtool
+	brew install coreutils subversion python3 sshfs ttytter python3-setuptools python3-pip wireshark nmap autoconf libtool tmux
+
+	#	Notes
+	##	for tmux on mac, if you are using iterm, it has integrated mouse support, else, visit https://gist.github.com/simme/1297707
+
 
 	if watch --help 2>/dev/null
 		then
