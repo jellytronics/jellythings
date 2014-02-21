@@ -13,7 +13,7 @@ chmod +x ~/jellythings/StartupScripts/tmux_utils.sh
 
 echo "Select options :-"
 
-select choice in "Mifare Project" "Software Defined Radio Project" "System I/O Utilities" "Kill all TMUX Sessions" "Run Installation Scripts" "Run Startup Scripts" "Update All" "Make files executable" "Exit"; do
+select choice in "Mifare Project" "Software Defined Radio Project" "System I/O Utilities" "Kill all TMUX Sessions" "Run Installation Scripts" "Run Startup Scripts" "Update All" "Update All -force" "Make files executable" "Exit"; do
     case $choice in
         "Mifare Project" ) ~/jellythings/Experiments/Mifare/tmux_mifare.sh;;
         "Software Defined Radio Project" ) ~/jellythings/Experiments/Sdr/tmux_sdr.sh;;
@@ -22,6 +22,7 @@ select choice in "Mifare Project" "Software Defined Radio Project" "System I/O U
 		"Run Installation Scripts" ) ~/jellythings/StartupScripts/install-all-allplatforms.sh;;
 		"Run Startup Scripts" ) ~/jellythings/StartupScripts/startup-all-allplatforms.sh;;
 		"Update All" ) ~/jellythings/StartupScripts/git_update_all.sh;;
+		"Update All -force" ) ~/jellythings/StartupScripts/git_update_all.sh -f;;
 		"Make files executable" ) chmod -R -f +x ~/jellythings;;
 		"Exit" ) break;;
     esac

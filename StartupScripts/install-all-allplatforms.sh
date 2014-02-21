@@ -132,7 +132,7 @@ chmod 777 ~/jellythings/Experiments/Mifare/install_mifare.sh
 
 echo "Installation complete"
 
-chmod 777 ~/jellythings -R
+chmod -R -f +x ~/jellythings/
 
 echo "Initializing Services"
 
