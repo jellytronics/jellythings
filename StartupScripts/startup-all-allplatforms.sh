@@ -9,20 +9,7 @@ NICE_IDEA_BUT_NOT_SUITABLE
 
 echo "Initialization Scripts Running YOZ!"
 
-NOW=$(date +"%m-%d-%Y %T")
-
-echo "Updating GIT - $NOW"
-
-cd ~/jellythings
-
-git pull
-git add -A
-git commit -m "Auto Backup and Sync - $NOW"
-git push origin master
-git pull
-git submodule update --init
-git pull --recurse-submodules
-git submodule foreach git pull origin master
+~/jellythings/StartupScripts/git_update_all.sh
 
 echo "Improving Wifi"
 
@@ -56,30 +43,28 @@ fi
 echo "Initializing Ttytter"
 
 chmod 777 ~/jellythings/Experiments/LCD\ Controller/startup.sh
+~/jellythings/Experiments/LCD\ Controller/startup.sh
 
-echo "Initializing SDR"
+echo "Initializing SDR Software(s)"
 
 chmod 777 ~/jellythings/Experiments/Sdr/startup_sdr.sh
+~/jellythings/Experiments/Sdr/startup_sdr.sh
+
+echo "Initializing Mifare Software(s)"
+
+chmod 777 ~/jellythings/Experiments/Mifare/startup_mifare.sh
+~/jellythings/Experiments/Mifare/startup_mifare.sh
 
 echo "Initialization complete"
 
-echo "Gitting Now"
-
-NOW=$(date +"%m-%d-%Y %T")
-
-echo "Updating GIT - $NOW"
-
-cd ~/jellythings
-
-git pull
-git add -A
-git commit -m "Auto Backup and Sync - $NOW"
-git push origin master
-git pull
-git submodule update --init
-git pull --recurse-submodules
-git submodule foreach git pull origin master
+~/jellythings/StartupScripts/git_update_all.sh
 
 
+
+chmod +x ~/jellythings/StartupScripts/tmux_commander.sh
+
+#clear
+#echo "Entering TMUX COMMANDER MENU!!!"
+#~/jellythings/StartupScripts/tmux_commander.sh
 
 

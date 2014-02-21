@@ -19,11 +19,32 @@ Ding Dangs contains all the nonsense stuff such as OVPN files and stuff.
 - Start install script
 
   ```sh
-  cd jellythings
+  cd ~/jellythings
   StartupScripts/install-all-allplatforms.sh
   ```
 
 - Brew a cuppa coffee, chillout and Enjoy!!!
+
+## Usage (Unified Interface)
+
+- Type
+
+  ```sh
+  cd ~/jellythings
+  StartupScripts/tmux_commander.sh
+  ```
+
+## Usage (Individual)
+
+- You can run the individual startup scripts to init the components.
+
+- Most of the applications "installed" are written by some other people so you should check out the relevant pages.
+
+- I DO NOT RECOMMEND that you run the crontab altering script :P
+
+  ```sh
+  ~/jellythings/StartupScripts/cron_handler.sh
+  ```
 
 ## Comments
 

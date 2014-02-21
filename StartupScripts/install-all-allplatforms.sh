@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+echo "WARNING: THIS IS WORK IN PROGRESS"
 echo "Installing all softwares"
 
 <<CHANGING_REPOS
@@ -25,6 +25,7 @@ echo "Installing all softwares"
 
 CHANGING_REPOS
 
+~/jellythings/StartupScripts/git_update_all.sh
 
 echo "Checking ssh-keys"
 
@@ -102,36 +103,11 @@ if [[ $(sw_vers -productName) == *Mac* ]]
 	echo "Watch command installed"
 
 else
+
+	echo "Hi Linux"'!'
 	sudo apt-get update
 	sudo apt-get install subversion python3 ssh sshfs arduino lm-sensors ttytter python3-setuptools python3-pip network-manager wpasupplicant wireless-tools wireshark nmap xrdp vino autoconf libtool libpam0g-dev libx11-dev libxfixes-dev libssl-dev -y
 fi
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<VNC_COMMENT
-
-	sudo apt-get install gnome-session-fallback 
-	echo  ”gnome-session --session=gnome-fallback” > ~/.xsession
-	sudo apt-get install x11vnc
-	
-VNC_COMMENT
-
-
-<<HOW_TO_ADD_SUBDIRECTORY
-
-	git submodule add git://git.osmocom.org/rtl-sdr.git ~/jellythings/Experiments/Sdr/rtl-sdr
-
-HOW_TO_ADD_SUBDIRECTORY
 
 
 
@@ -148,11 +124,21 @@ chmod 777 ~/jellythings/Experiments/Sdr/install_sdr.sh
 
 ~/jellythings/Experiments/Sdr/install_sdr.sh
 
+echo "Installing Mifare packages"
+
+chmod 777 ~/jellythings/Experiments/Mifare/install_mifare.sh
+
+~/jellythings/Experiments/Mifare/install_mifare.sh
+
 echo "Installation complete"
 
 chmod 777 ~/jellythings -R
 
 echo "Initializing Services"
 
-sudo ~/jellythings/StartupScripts/startup-all-allplatforms.sh
+~/jellythings/StartupScripts/startup-all-allplatforms.sh
+
+echo "Starting Cron Handler"
+
+~/jellythings/StartupScripts/cron_handler.sh
 

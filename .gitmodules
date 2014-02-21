@@ -19,3 +19,21 @@
 [submodule "Experiments/Sdr/dump1090"]
 	path = Experiments/Sdr/dump1090
 	url = git@github.com:antirez/dump1090.git
+[submodule "/Users/jelly/jellythings/Experiments/Mifare/libnfc"]
+	path = /Users/jelly/jellythings/Experiments/Mifare/libnfc
+	url = https://code.google.com/p/libnfc/
+[submodule "/Users/jelly/jellythings/Experiments/Mifare/libfreefare"]
+	path = /Users/jelly/jellythings/Experiments/Mifare/libfreefare
+	url = https://code.google.com/p/libfreefare/
+[submodule "/Users/jelly/jellythings/Experiments/Mifare/libllcp"]
+	path = /Users/jelly/jellythings/Experiments/Mifare/libllcp
+	url = https://code.google.com/p/libllcp/
+[submodule "/Users/jelly/jellythings/Experiments/Mifare/libndef"]
+	path = /Users/jelly/jellythings/Experiments/Mifare/libndef
+	url = https://github.com/nfc-tools/libndef.git
+[submodule "/Users/jelly/jellythings/Experiments/Mifare/mfoc"]
+	path = /Users/jelly/jellythings/Experiments/Mifare/mfoc
+	url = https://code.google.com/p/mfoc/
+[submodule "/Users/jelly/jellythings/Experiments/Mifare/RFIDIOt"]
+	path = /Users/jelly/jellythings/Experiments/Mifare/RFIDIOt
+	url = https://github.com/AdamLaurie/RFIDIOt.git
