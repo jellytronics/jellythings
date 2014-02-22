@@ -1,7 +1,13 @@
 #!/bin/bash
 
 echo "WARNING: THIS IS WORK IN PROGRESS"
-echo "Installing all softwares"
+
+if [[ "$1" == "--interactive" || "$1" == "-i" ]]
+	then
+	echo "Installing all softwares"
+else
+	echo "Installing all softwares"
+
 
 <<CHANGING_REPOS
 

@@ -2,7 +2,7 @@
 
 NOW=$(date +"%m-%d-%Y %T")
 
-if [[ "$1" == "-force" || "$1" == "-f" ]]
+if [[ "$1" == "--force" || "$1" == "-f" ]]
 	then
 	echo "Updating GIT with force - $NOW"
 
