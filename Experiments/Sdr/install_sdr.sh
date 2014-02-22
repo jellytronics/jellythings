@@ -111,12 +111,13 @@ if [[ $(sw_vers -productName) == *Mac* ]]
 
 else
 	echo "Installing GNURADIO with apt-get"
-	sudo apt-get install cmake gnuradio libusb-dev libusb-1.0-0-dev alsa alsa-utils cmake -y
+	sudo apt-get install cmake libusb-dev libusb-1.0-0-dev alsa alsa-utils cmake -y
 fi
 
 if sudo apt-get install gnuradio -y
 	then
 	echo "gnuradio is installable"
+	sudo apt-get install gnuradio -y
 else
 	echo "installing using alternate method"
 	cd ~/jellythings/Experiments/Sdr/Gnuradio_installer
