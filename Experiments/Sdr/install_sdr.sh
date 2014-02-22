@@ -112,19 +112,38 @@ if [[ $(sw_vers -productName) == *Mac* ]]
 else
 	echo "Installing GNURADIO with apt-get"
 	sudo apt-get install cmake libusb-dev libusb-1.0-0-dev alsa alsa-utils cmake -y
+	if hash gnuradio 2>/dev/null
+		then
+		echo "gnuradio is installed"
+	else
+		if sudo apt-get install gnuradio -y
+			then
+			echo "gnuradio is installable"
+			sudo apt-get install gnuradio -y
+		else
+			echo "installing using alternate method"
+			cd ~/jellythings/Experiments/Sdr/Gnuradio_installer
+			wget http://www.sbrac.org/files/build-gnuradio
+			chmod a+x ./build-gnuradio
+			./build-gnuradio
+		fi
+	fi
+
+	if hash rtl_sdr 2>/dev/null
+	then
+		echo "RTL_SDR is already installed"
+	else
+		echo "Installing RTL_SDR with backup option"
+		cd ~/jellythings/Experiments/Sdr/rtl-sdr/
+		mkdir build
+		cd build
+		cmake ../ -DINSTALL_UDEV_RULES=ON
+		make
+		sudo make install
+		sudo ldconfig
+	fi
 fi
 
-if sudo apt-get install gnuradio -y
-	then
-	echo "gnuradio is installable"
-	sudo apt-get install gnuradio -y
-else
-	echo "installing using alternate method"
-	cd ~/jellythings/Experiments/Sdr/Gnuradio_installer
-	wget http://www.sbrac.org/files/build-gnuradio
-	chmod a+x ./build-gnuradio
-	./build-gnuradio
-fi
 
 
 
@@ -176,20 +195,6 @@ COMMON_ERRORS
 
 
 cd ~
-
-if hash rtl_sdr 2>/dev/null
-then
-	echo "RTL_SDR is already installed"
-else
-	echo "Installing RTL_SDR"
-	cd ~/jellythings/Experiments/Sdr/rtl-sdr/
-	mkdir build
-	cd build
-	cmake ../ -DINSTALL_UDEV_RULES=ON
-	make
-	sudo make install
-	sudo ldconfig
-fi
 
 
 if hash ~/jellythings/Experiments/Sdr/dump1090/dump1090 2>/dev/null
