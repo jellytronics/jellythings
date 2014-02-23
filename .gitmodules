@@ -1,11 +1,11 @@
-[submodule "Experiments/LCD Controller/quick2wire-gpio-admin"]
-	path = Experiments/LCD Controller/quick2wire-gpio-admin
+[submodule "Experiments/LCD_Controller/quick2wire-gpio-admin"]
+	path = Experiments/LCD_Controller/quick2wire-gpio-admin
 	url = git@github.com:quick2wire/quick2wire-gpio-admin.git
-[submodule "Experiments/LCD Controller/quick2wire-python-api"]
-	path = Experiments/LCD Controller/quick2wire-python-api
+[submodule "Experiments/LCD_Controller/quick2wire-python-api"]
+	path = Experiments/LCD_Controller/quick2wire-python-api
 	url = git@github.com:quick2wire/quick2wire-python-api.git
-[submodule "Experiments/LCD Controller/i2clibraries"]
-	path = Experiments/LCD Controller/i2clibraries
+[submodule "Experiments/LCD_Controller/i2clibraries"]
+	path = Experiments/LCD_Controller/i2clibraries
 	url = https://bitbucket.org/thinkbowl/i2clibraries.git
 [submodule "Experiments/Sdr/rtl-sdr"]
 	path = Experiments/Sdr/rtl-sdr
