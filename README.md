@@ -11,6 +11,8 @@ Experiments contains all my digital and electronics experimentations
 StartupScripts contains scripts that will help in the initialization of my Raspberry Pis and Servers
 Ding Dangs contains all the nonsense stuff such as OVPN files and stuff.
 
+This project(s) will be suspended indefinitely from 11th March 2014.
+
 
 ## Installation
 
